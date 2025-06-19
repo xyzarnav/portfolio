@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-eerie-black-1 to-smoky-black min-h-screen overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-white-2 text-fs-1 capitalize relative pb-[7px] mb-[15px] md:font-fw-600 md:pb-[15px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-[30px] after:h-[3px] after:bg-text-gradient-yellow after:rounded-[3px] md:after:w-[40px] md:after:h-[5px] md:mb-[20px];
+  }
+  
+  .card {
+    @apply relative bg-border-gradient-onyx rounded-[14px] shadow-shadow-2 z-10 before:content-[''] before:absolute before:inset-[1px] before:bg-gradient-jet before:rounded-[13px] before:z-[-1];
+  }
+  
+  .icon-box {
+    @apply relative bg-border-gradient-onyx w-[30px] h-[30px] rounded-[8px] flex justify-center items-center text-[16px] text-orange-yellow-crayola shadow-shadow-1 z-10 before:content-[''] before:absolute before:inset-[1px] before:bg-eerie-black-1 before:rounded-[8px] before:z-[-1] md:w-[48px] md:h-[48px] md:rounded-[12px] md:text-[18px] md:before:rounded-[11px];
+  }
+  
+  .animate-fadeIn {
+    @apply animate-[fadeIn_0.5s_ease_forwards];
+  }
+  
+  .animate-slideInBottom {
+    @apply animate-[slideInBottom_0.5s_ease_forwards];
+  }
+
+  /* Mobile-first responsive container */
+  .container-custom {
+    @apply w-full max-w-[100%] px-4 sm:px-6 md:max-w-[540px] lg:max-w-[720px] xl:max-w-[1140px] mx-auto;
+  }
+
+  /* Mobile adjustments for cards */
+  .mobile-card {
+    @apply p-4 sm:p-5 md:p-6;
+  }
+  
+  /* Better mobile text sizes */
+  .mobile-text {
+    @apply text-[14px] sm:text-[15px] md:text-[16px];
+  }
+  
+  /* Mobile spacing utilities */
+  .mobile-spacing {
+    @apply mb-6 sm:mb-8 md:mb-10;
+  }
+
+  /* Better grid for mobile */
+  .mobile-grid {
+    @apply grid gap-4 sm:gap-5 md:gap-6;
+  }
+
+  /* Navbar styles */
+  .navbar-item {
+    @apply relative;
+  }
+
+  .navbar-item a::before {
+    @apply content-[''] absolute -inset-1 rounded-md scale-x-0 transition-transform duration-200 origin-right;
+    background: linear-gradient(to right, rgba(247, 196, 108, 0.1), rgba(201, 171, 84, 0.1));
+  }
+
+  .navbar-item a:hover::before {
+    @apply scale-x-100 origin-left;
+  }
+  
+  /* Active nav item styles */
+  .navbar-item a.active::before {
+    @apply scale-x-100;
+  }
+  
+  /* Sidebar specific styles */
+  .sidebar-expanded {
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  @screen xl {
+    aside.card {
+      height: auto !important;
+      max-height: none !important;
+      overflow: visible !important;
+    }
+
+    .sidebar-info_more {
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: block !important;
+    }
+  }
+}
+
+/* Fix for sticky positioning */
+@media (min-width: 1280px) {
+  .sticky-sidebar {
+    position: sticky;
+    top: 2rem;
+    height: calc(100vh - 4rem);
+  }
+}
+
+/* Navbar transition */
+.nav-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Media query for very small screens */
+@media (max-width: 360px) {
+  .xs-hidden {
+    display: none;
+  }
+  
+  .xs-text-center {
+    text-align: center;
+  }
+  
+  .xs-w-full {
+    width: 100%;
+  }
+  
+  .xs-py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .xs-px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* Fix for mobile tap highlight */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Fix for mobile overflow issues */
+.overflow-fix {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-x: hidden;
+    scrollbar-width: none;
+  }
+}
