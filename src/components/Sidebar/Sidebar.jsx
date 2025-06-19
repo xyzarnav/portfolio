@@ -152,18 +152,50 @@ const Sidebar = () => {
 
         <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-jet to-transparent my-2 sm:my-[12px] md:my-[24px] xl:last-of-type:my-[10px] xl:last-of-type:opacity-0"></div>
 
-        <ul className="flex justify-start items-center gap-[10px] pb-[2px] pl-[5px] xl:justify-center">
+               
+        <ul className="flex justify-start items-center gap-[14px] pb-[2px] pl-[5px] xl:justify-center">
           <li>
-            <a href="https://github.com/xyzarnav" className="text-light-gray-70 text-base sm:text-[20px] hover:text-orange-yellow-crayola">
+            <a
+              href="https://github.com/xyzarnav"
+              className="text-[#fff] text-[22px] sm:text-[24px] hover:text-[#fbbc05] transition-colors"
+              aria-label="GitHub"
+              target="_blank" rel="noopener noreferrer"
+            >
               <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/arnav-yadav-56410329b/" className="text-light-gray-70 text-base sm:text-[20px] hover:text-orange-yellow-crayola">
+            <a
+              href="https://www.linkedin.com/in/arnav-yadav-56410329b/"
+              className="text-[#0a66c2] text-[22px] sm:text-[24px] hover:text-[#fbbc05] transition-colors"
+              aria-label="LinkedIn"
+              target="_blank" rel="noopener noreferrer"
+            >
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
+          <li>
+            <a
+              href="https://twitter.com/your_twitter_handle"
+              className="text-[#1da1f2] text-[22px] sm:text-[24px] hover:text-[#fbbc05] transition-colors"
+              aria-label="Twitter"
+              target="_blank" rel="noopener noreferrer"
+            >
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://t.me/your_telegram_handle"
+              className="text-[#229ed9] text-[22px] sm:text-[24px] hover:text-[#fbbc05] transition-colors"
+              aria-label="Telegram"
+              target="_blank" rel="noopener noreferrer"
+            >
+              <ion-icon name="paper-plane-outline"></ion-icon>
+            </a>
+          </li>
         </ul>
+    
       </div>
     </aside>
   );

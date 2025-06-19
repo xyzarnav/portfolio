@@ -4,15 +4,50 @@ const contactInfo = [
   {
     icon: "mail-outline",
     title: "Email",
-    content: "arnav20604@example.com",
-    link: "arnav20604@example.com",
+    content: "arnav20604@gmail.com",
+    link: "mailto:arnav20604@gmail.com",
   },
   {
     icon: "call-outline",
     title: "Phone",
     content: "+91 7774063885",
-    link: "+91 7774063885",
+    link: "tel:+917774063885",
   },
+  {
+    icon: "logo-linkedin",
+    title: "LinkedIn",
+    content: "linkedin.com/in/arnav-yadav-56410329b",
+    link: "https://www.linkedin.com/in/arnav-yadav-56410329b/",
+  },
+  {
+    icon: "logo-github",
+    title: "GitHub",
+    content: "github.com/xyzarnav",
+    link: "https://github.com/xyzarnav",
+  },
+];
+
+const socialLinks = [
+  {
+    icon: 'logo-github',
+    color: 'hover:bg-gray-700',
+    link: 'https://github.com/xyzarnav'
+  },
+  {
+    icon: 'logo-linkedin',
+    color: 'hover:bg-blue-600',
+    link: 'https://www.linkedin.com/in/arnav-yadav-56410329b/'
+  },
+  {
+    icon: 'logo-twitter',
+    color: 'hover:bg-blue-400',
+    link: 'https://twitter.com/your_twitter_handle'
+  },
+  {
+    icon: 'logo-instagram',
+    color: 'hover:bg-pink-600',
+    link: 'https://instagram.com/your_instagram_handle'
+  }
 ];
 
 const Contact = () => {
@@ -76,8 +111,8 @@ const Contact = () => {
                     <a 
                       href={item.link} 
                       className="flex items-center gap-4"
-                      target={item.title === 'Location' ? '_blank' : undefined}
-                      rel={item.title === 'Location' ? 'noreferrer' : undefined}
+                      target={item.title === 'LinkedIn' || item.title === 'GitHub' ? '_blank' : undefined}
+                      rel={item.title === 'LinkedIn' || item.title === 'GitHub' ? 'noreferrer' : undefined}
                     >
                       <div className="w-10 h-10 rounded-full bg-eerie-black-2 flex items-center justify-center text-neon-blue text-xl shadow-glow">
                         <ion-icon name={item.icon}></ion-icon>
@@ -86,7 +121,7 @@ const Contact = () => {
                         <p className="text-white/50 text-xs uppercase mb-1 tracking-wider">
                           {item.title}
                         </p>
-                        <p className="text-white text-[15px] font-fw-500 transition-colors hover:text-neon-blue">
+                        <p className="text-white text-[15px] font-fw-500 transition-colors hover:text-neon-blue break-all">
                           {item.content}
                         </p>
                       </div>
@@ -100,28 +135,12 @@ const Contact = () => {
             <div className="bg-eerie-black-1/50 backdrop-blur-sm rounded-xl p-5 mt-auto border border-white/5">
               <h4 className="text-white text-[16px] mb-4">Connect with me:</h4>
               <div className="flex gap-3">
-                {[
-                  {
-                    icon: 'logo-github',
-                    color: 'hover:bg-gray-700'
-                  },
-                  {
-                    icon: 'logo-linkedin',
-                    color: 'hover:bg-blue-600'
-                  },
-                  {
-                    icon: 'logo-twitter',
-                    color: 'hover:bg-blue-400'
-                  },
-                  {
-                    icon: 'logo-instagram',
-                    color: 'hover:bg-pink-600'
-                  }
-                ].map((item, i) => (
+                {socialLinks.map((item, i) => (
                   <a 
                     key={i} 
-                    href="#" 
+                    href={item.link} 
                     className={`w-10 h-10 flex items-center justify-center rounded-full bg-eerie-black-2 text-white/70 ${item.color} hover:text-white hover:scale-110 transition-all duration-300`}
+                    target="_blank" rel="noopener noreferrer"
                   >
                     <ion-icon name={item.icon}></ion-icon>
                   </a>

@@ -7,7 +7,7 @@ const projects = [
     tech: ["Next.js", "React", "TailwindCSS", "Ethereum", "Solidity"],
     image:
       "https://img.freepik.com/free-photo/medium-shot-man-wearing-headphones_23-2149153410.jpg?t=st=1750340465~exp=1750344065~hmac=a76531e38f7250e8db873964d94a7e81403e2731b64950d635d0914905eb22d5&w=1380",
-    github: "https://github.com/username/trustchain",
+    github: "https://github.com/xyzarnav/trustchain",
     live: "https://trustchain-demo.com",
     keyPoints: [
       "Transparent government bidding platform",
@@ -22,6 +22,7 @@ const projects = [
     category: "Trading",
     tech: ["Python", "WebSockets", "Binance API", "TA-Lib"],
     image: "/src/assets/images/portfolio/arbitage.png",
+    github: "https://github.com/xyzarnav/crypto-arbitrage-bot",
     keyPoints: [
       "500+ simulated trades",
       "Real-time market data",
@@ -36,6 +37,7 @@ const projects = [
     tech: ["React", "MongoDB", "TailwindCSS"],
     image: "/src/assets/images/portfolio/Turf.png",
     live: "https://turf-booking-demo.com",
+    github: "https://github.com/xyzarnav/turf-booking-system",
     keyPoints: [
       "Real-time reservations",
       "40% faster bookings",
@@ -62,7 +64,7 @@ const Portfolio = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="group relative bg-gradient-to-br from-eerie-black-1 to-eerie-black-2 rounded-xl overflow-hidden border border-orange-yellow-crayola/50 hover:shadow-glow transition-all duration-300"
+            className="group relative bg-gradient-to-br from-eerie-black-1 to-eerie-black-2 rounded-xl overflow-hidden border border-orange-yellow-crayola/50 hover:shadow-glow transition-all duration-300 flex flex-col"
             style={{ animation: `fadeInUp 0.5s ease forwards ${index * 0.2}s` }}
           >
             {/* Project Image */}
@@ -81,7 +83,7 @@ const Portfolio = () => {
             </div>
 
             {/* Content */}
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-1">
               <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-neon-blue transition-colors">
                 {project.title}
               </h3>
@@ -115,7 +117,7 @@ const Portfolio = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center gap-4">
+              <div className="flex justify-start mt-auto">
                 <a
                   href={project.github}
                   className="flex items-center gap-2 bg-neon-blue/20 hover:bg-neon-blue/30 text-neon-blue border border-neon-blue/50 rounded-lg px-4 py-2 text-sm transition-all duration-300"

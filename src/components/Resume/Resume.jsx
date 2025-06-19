@@ -354,7 +354,12 @@ const Resume = () => {
 
       {/* Download Resume Button */}
       <div className="flex justify-center mt-6 sm:mt-8">
-        <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r from-orange-yellow-crayola to-vegas-gold p-0.5 text-eerie-black-1 shadow-glow hover:shadow-xl hover:shadow-orange-yellow-crayola/30 focus:outline-none">
+        <a
+          href="https://github.com/xyzarnav" // Replace with your actual resume link if available
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r from-orange-yellow-crayola to-vegas-gold p-0.5 text-eerie-black-1 shadow-glow hover:shadow-xl hover:shadow-orange-yellow-crayola/30 focus:outline-none"
+        >
           <span className="relative flex items-center gap-2 rounded-md bg-eerie-black-1 px-4 sm:px-6 py-2 sm:py-3 transition-all duration-300 ease-in group-hover:bg-opacity-0">
             <ion-icon
               name="download-outline"
@@ -364,7 +369,7 @@ const Resume = () => {
               Download Resume
             </span>
           </span>
-        </button>
+        </a>
       </div>
     </article>
   );
