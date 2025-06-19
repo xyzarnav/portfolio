@@ -1,217 +1,133 @@
-import { useState, useEffect } from 'react';
-
-const categories = [
-  { label: 'All', value: 'all' },
-  { label: 'Web Design', value: 'web design' },
-  { label: 'Applications', value: 'applications' },
-  { label: 'Web Development', value: 'web development' },
-];
+// import { useState } from 'react';
 
 const projects = [
   {
-    title: 'Finance',
-    category: 'web development',
-    img: '/assets/images/project-1.jpg',
-    link: '#',
-    description: 'A comprehensive financial dashboard with interactive charts and real-time data visualization.',
+    title: "TrustChain",
+    category: "Blockchain",
+    tech: ["Next.js", "React", "TailwindCSS", "Ethereum", "Solidity"],
+    image:
+      "https://img.freepik.com/free-photo/medium-shot-man-wearing-headphones_23-2149153410.jpg?t=st=1750340465~exp=1750344065~hmac=a76531e38f7250e8db873964d94a7e81403e2731b64950d635d0914905eb22d5&w=1380",
+    github: "https://github.com/username/trustchain",
+    live: "https://trustchain-demo.com",
+    keyPoints: [
+      "Transparent government bidding platform",
+      "100+ simulated transactions",
+      "Smart contract automation",
+    ],
+    description:
+      "Web3-based platform for transparent government bidding processes, eliminating corruption through immutable transaction records and smart contracts.",
   },
   {
-    title: 'Orizon',
-    category: 'web development',
-    img: '/assets/images/project-2.png',
-    link: '#',
-    description: 'Cloud-based project management platform with intuitive UI/UX and collaborative features.',
+    title: "Crypto Arbitrage Bot",
+    category: "Trading",
+    tech: ["Python", "WebSockets", "Binance API", "TA-Lib"],
+    image: "/src/assets/images/portfolio/arbitage.png",
+    keyPoints: [
+      "500+ simulated trades",
+      "Real-time market data",
+      "10% test profit",
+    ],
+    description:
+      "High-frequency crypto trading bot exploiting price differences across exchanges, with real-time market data streaming and automated execution.",
   },
   {
-    title: 'Fundo',
-    category: 'web design',
-    img: '/assets/images/project-3.jpg',
-    link: '#',
-    description: 'Modern funding platform design with user-friendly interface and secure payment integration.',
-  },
-  {
-    title: 'Brawlhalla',
-    category: 'applications',
-    img: '/assets/images/project-4.png',
-    link: '#',
-    description: 'Mobile gaming app with real-time multiplayer functionality and customizable characters.',
-  },
-  {
-    title: 'DSM.',
-    category: 'web design',
-    img: '/assets/images/project-5.png',
-    link: '#',
-    description: 'Design system manager with component library, style guides and developer documentation.',
-  },
-  {
-    title: 'MetaSpark',
-    category: 'web design',
-    img: '/assets/images/project-6.png',
-    link: '#',
-    description: 'VR/AR experience platform with immersive interfaces and cutting-edge 3D visuals.',
-  },
-  {
-    title: 'Summary',
-    category: 'web development',
-    img: '/assets/images/project-7.png',
-    link: '#',
-    description: 'Content summarization tool powered by AI with multi-language support and export features.',
-  },
-  {
-    title: 'Task Manager',
-    category: 'applications',
-    img: '/assets/images/project-8.jpg',
-    link: '#',
-    description: 'Productivity application with task prioritization, reminder system and team collaboration.',
-  },
-  {
-    title: 'Arrival',
-    category: 'web development',
-    img: '/assets/images/project-9.png',
-    link: '#',
-    description: 'Travel planning platform with itinerary builder, booking integration and local recommendations.',
+    title: "Turf Booking System",
+    category: "Web App",
+    tech: ["React", "MongoDB", "TailwindCSS"],
+    image: "/src/assets/images/portfolio/Turf.png",
+    live: "https://turf-booking-demo.com",
+    keyPoints: [
+      "Real-time reservations",
+      "40% faster bookings",
+      "Mobile-first design",
+    ],
+    description:
+      "Full-stack turf booking platform with real-time slot reservations, payment integration, wallet, and group cost-splitting functionality.",
   },
 ];
 
 const Portfolio = () => {
-  const [selected, setSelected] = useState('all');
-  const [filtered, setFiltered] = useState(projects);
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    setFiltered(selected === 'all' ? projects : projects.filter(p => p.category === selected));
-  }, [selected]);
-
-  const handleCategoryChange = (category) => {
-    setSelected(category);
-  };
-
-  return (
-    <article className="card bg-eerie-black-2 border border-jet/40 rounded-[20px] p-[15px] sm:p-[20px] shadow-shadow-1 animate-[fadeIn_0.5s_ease_backwards] w-full sm:w-[90%] md:w-[520px] md:mx-auto md:p-[30px] xl:w-auto xl:min-h-full">
-      <header className="mb-5 sm:mb-8">
-        <h2 className="section-title bg-text-gradient-yellow text-transparent bg-clip-text inline-block text-[22px] sm:text-fs-1">
-          Portfolio
+	return (
+    <article className="card bg-transparent border border-jet/40 rounded-[20px] p-[15px] sm:p-[20px] shadow-shadow-1 animate-[fadeIn_0.5s_ease_backwards]">
+      <header className="mb-8 sm:mb-10">
+        <h2 className="text-[24px] sm:text-[28px] font-bold text-white">
+          Featured Projects
         </h2>
+        <p className="text-white/60 text-sm mt-2">
+          Showcasing my latest work in Web3 and full-stack development
+        </p>
       </header>
 
-      <section className="projects">
-        {/* Desktop Filter Menu */}
-        <ul className="hidden md:flex flex-wrap justify-center gap-3 mb-8">
-          {categories.map((cat) => (
-            <li key={cat.value}>
-              <button
-                className={`px-5 py-2 rounded-full transition-all duration-300 ${
-                  selected === cat.value
-                    ? 'bg-gradient-to-r from-orange-yellow-crayola to-vegas-gold text-eerie-black-1 font-fw-500 shadow-glow'
-                    : 'text-light-gray bg-eerie-black-1/50 hover:bg-eerie-black-1'
-                }`}
-                onClick={() => handleCategoryChange(cat.value)}
-              >
-                {cat.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile Filter Dropdown */}
-        <div className="filter-select-box relative mb-4 sm:mb-6 md:hidden">
-          <button
-            className="w-full flex items-center justify-between bg-eerie-black-1 text-light-gray p-2 sm:p-3 rounded-lg text-[13px] sm:text-fs-6"
-            onClick={() => setIsOpen(!isOpen)}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="group relative bg-gradient-to-br from-eerie-black-1 to-eerie-black-2 rounded-xl overflow-hidden border border-orange-yellow-crayola/50 hover:shadow-glow transition-all duration-300"
+            style={{ animation: `fadeInUp 0.5s ease forwards ${index * 0.2}s` }}
           >
-            <div className="select-value font-fw-500">
-              {categories.find(c => c.value === selected)?.label || 'Select category'}
-            </div>
-            <div className="select-icon">
-              <ion-icon name={isOpen ? 'chevron-up' : 'chevron-down'}></ion-icon>
-            </div>
-          </button>
-
-          {isOpen && (
-            <ul className="select-list absolute top-full left-0 w-full bg-eerie-black-1 mt-1 rounded-lg overflow-hidden z-20 shadow-shadow-2 animate-[fadeIn_0.2s_ease_forwards]">
-              {categories.map((cat) => (
-                <li className="select-item" key={cat.value}>
-                  <button
-                    className={`w-full text-left p-2 sm:p-3 hover:bg-jet text-[12px] sm:text-fs-7 ${selected === cat.value ? 'text-orange-yellow-crayola' : 'text-light-gray'}`}
-                    onClick={() => {
-                      handleCategoryChange(cat.value);
-                      setIsOpen(false);
-                    }}
-                  >
-                    {cat.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-
-        {/* Project Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {filtered.map((project, i) => (
-            <div
-              key={i}
-              className="project-item group"
-              style={{
-                animationName: 'fadeIn',
-                animationDuration: '0.5s',
-                animationDelay: `${i * 0.1}s`,
-                animationFillMode: 'both',
-              }}
-            >
-              <div className="card overflow-hidden relative">
-                <figure className="project-img overflow-hidden">
-                  <img
-                    src={project.img}
-                    alt={project.title.toLowerCase()}
-                    loading="lazy"
-                    className="w-full h-[160px] sm:h-[180px] md:h-[200px] object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-
-                  <div className="project-item-icon-box absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-3 sm:p-4">
-                    <h3 className="project-title text-white-1 text-[15px] sm:text-fs-4 font-fw-500 mb-1">
-                      {project.title}
-                    </h3>
-                    <p className="project-category text-light-gray text-[11px] sm:text-fs-7 mb-1 sm:mb-3">
-                      {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
-                    </p>
-                    <p className="text-light-gray text-[11px] sm:text-fs-7 mb-2 sm:mb-4 line-clamp-2">
-                      {project.description}
-                    </p>
-                    <a
-                      href={project.link}
-                      className="inline-flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-orange-yellow-crayola to-vegas-gold text-eerie-black-1 font-fw-500 py-1 sm:py-2 px-2 sm:px-4 rounded-md text-[11px] sm:text-fs-7 w-max transition-transform duration-300 hover:scale-105"
-                    >
-                      View Project
-                      <ion-icon name="arrow-forward-outline"></ion-icon>
-                    </a>
-                  </div>
-                </figure>
+            {/* Project Image */}
+            <div className="relative h-48 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-10" />
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute top-4 right-4 z-20">
+                <span className="px-3 py-1 text-xs font-medium text-white bg-orange-yellow-crayola/20 backdrop-blur-sm rounded-full border border-orange-yellow-crayola/30">
+                  {project.category}
+                </span>
               </div>
+            </div>
 
-              <h3 className="mt-2 sm:mt-3 text-white-2 text-[13px] sm:text-fs-6 font-fw-500 transition-all group-hover:text-orange-yellow-crayola">
+            {/* Content */}
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-neon-blue transition-colors">
                 {project.title}
               </h3>
-              <p className="text-light-gray-70 text-[11px] sm:text-fs-7">
-                {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
-              </p>
-            </div>
-          ))}
-        </div>
 
-        {filtered.length === 0 && (
-          <div className="flex flex-col items-center justify-center py-6 sm:py-10 text-center">
-            <ion-icon name="search-outline" class="text-2xl sm:text-4xl text-light-gray mb-2 sm:mb-4"></ion-icon>
-            <p className="text-light-gray text-[13px] sm:text-fs-6">No projects found in this category</p>
-            <button
-              className="mt-3 sm:mt-4 text-orange-yellow-crayola text-[13px] sm:text-fs-6 hover:underline"
-              onClick={() => setSelected('all')}
-            >
-              View all projects
-            </button>
+              <p className="text-white/70 text-sm mb-4 line-clamp-2">
+                {project.description}
+              </p>
+
+              {/* Key Points */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.keyPoints.map((point, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-1 text-xs font-medium text-white/90 bg-white/5 rounded-md border border-white/10"
+                  >
+                    {point}
+                  </span>
+                ))}
+              </div>
+
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tech.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-1 text-[10px] font-medium text-orange-yellow-crayola/90 bg-gradient-to-br from-orange-yellow-crayola/10 to-vegas-gold/10 rounded-md"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex items-center gap-4">
+                <a
+                  href={project.github}
+                  className="flex items-center gap-2 bg-neon-blue/20 hover:bg-neon-blue/30 text-neon-blue border border-neon-blue/50 rounded-lg px-4 py-2 text-sm transition-all duration-300"
+                >
+                  <ion-icon name="logo-github" class="text-lg"></ion-icon>
+                  GitHub
+                </a>
+              </div>
+            </div>
           </div>
-        )}
-      </section>
+        ))}
+      </div>
     </article>
   );
 };
