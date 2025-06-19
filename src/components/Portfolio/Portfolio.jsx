@@ -5,9 +5,7 @@ const projects = [
     title: "TrustChain",
     category: "Blockchain",
     tech: ["Next.js", "React", "TailwindCSS", "Ethereum", "Solidity"],
-    image:
-      "https://img.freepik.com/free-photo/medium-shot-man-wearing-headphones_23-2149153410.jpg?t=st=1750340465~exp=1750344065~hmac=a76531e38f7250e8db873964d94a7e81403e2731b64950d635d0914905eb22d5&w=1380",
-    github: "https://github.com/xyzarnav/trustchain",
+    image: "/src/assets/images/portfolio/TrustChain.png",
     live: "https://trustchain-demo.com",
     keyPoints: [
       "Transparent government bidding platform",
@@ -37,7 +35,7 @@ const projects = [
     tech: ["React", "MongoDB", "TailwindCSS"],
     image: "/src/assets/images/portfolio/Turf.png",
     live: "https://turf-booking-demo.com",
-    github: "https://github.com/xyzarnav/turf-booking-system",
+    github: "https://github.com/xyzarnav/test_turf",
     keyPoints: [
       "Real-time reservations",
       "40% faster bookings",
