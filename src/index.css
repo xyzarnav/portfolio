@@ -157,3 +157,49 @@
     scrollbar-width: none;
   }
 }
+
+/* New animations for the swipe indicator */
+@keyframes slide-right {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(8px);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-slide-right {
+  animation: slide-right 1.5s ease-in-out infinite;
+}
+
+.animate-fade-out {
+  animation: fade-out 5s ease-in-out forwards;
+}
+
+/* Fullpage.js mobile styles */
+.fp-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.fp-section {
+  width: 100%;
+  position: relative;
+  touch-action: none;
+}

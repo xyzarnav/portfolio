@@ -70,8 +70,9 @@ const skills = [
   },
 ];
 
-const Resume = () => {
-  const [isVisible, setIsVisible] = useState(false);
+const Resume = (props) => {
+  // Using prefix _ to indicate it's intentionally unused, or remove if not needed
+  const [_isVisible, setIsVisible] = useState(false);
   const skillsRef = useRef(null);
 
   useEffect(() => {
@@ -100,7 +101,7 @@ const Resume = () => {
   }, []);
 
   return (
-    <article className="card bg-smokyblack border border-jet/40 rounded-[20px] p-[20px] sm:p-[25px] shadow-shadow-1 animate-[fadeIn_0.5s_ease_backwards] w-full sm:w-[95%] md:w-[540px] md:mx-auto md:p-[30px] xl:w-auto xl:min-h-full max-w-[1200px] mx-auto">
+    <article className={`card bg-smokyblack border border-jet/40 rounded-[20px] p-[20px] sm:p-[25px] shadow-shadow-1 animate-[fadeIn_0.5s_ease_backwards] w-full sm:w-[95%] md:w-[540px] md:mx-auto md:p-[30px] xl:w-auto xl:min-h-full max-w-[1200px] mx-auto ${props?.isMobile ? "flex flex-col h-full min-h-0" : ""}`}>
       <header className="mb-6 sm:mb-8">
         <h2 className="section-title bg-text-gradient-yellow text-transparent bg-clip-text inline-block text-[24px] sm:text-[28px] font-bold">
           Resume

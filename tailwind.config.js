@@ -6,6 +6,7 @@ export default {
       colors: {
         jet: "#383838",
         onyx: "#2b2b30",
+        "custom-blue": "#5227FF",
         "eerie-black-1": "#212428",
         "eerie-black-2": "#2a2a30",
         "smoky-black": "#121212",
@@ -93,5 +94,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
