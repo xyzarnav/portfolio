@@ -65,7 +65,7 @@
 
   .navbar-item a::before {
     @apply content-[''] absolute -inset-1 rounded-md scale-x-0 transition-transform duration-200 origin-right;
-    background: linear-gradient(to right, rgba(247, 196, 108, 0.1), rgba(201, 171, 84, 0.1));
+   
   }
 
   .navbar-item a:hover::before {
