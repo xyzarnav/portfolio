@@ -270,45 +270,84 @@
   }
 }
 
-/* Fix for grid column alignment issues */
-@media screen and (min-width: 640px) {
-  .grid-skills-fix {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%;
-    gap: 1rem;
-  }
-  
-  .grid-skills-fix > div {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-/* Equal width card items */
-.grid-skills-fix {
+/* --- NEW SKILLS GRID LAYOUT --- */
+.new-skills-grid {
   display: grid;
-  gap: 1rem;
-  width: 100%;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
-.grid-skills-fix > div {
-  display: flex;
-  width: 100%;
-  margin: 0;
-}
-
-.grid-skills-fix > div > div:last-child {
-  flex: 1;
-  width: 100%;
-}
-
-/* Fix for animation transform issues */
 @media (min-width: 640px) {
-  .grid-skills-fix > div {
-    transform: none !important;
+  .new-skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 2rem;
   }
-  
-  .grid-skills-fix > div:hover {
-    transform: translateY(-4px) !important;
-  }
+}
+
+.new-skill-card {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border: 2px solid transparent;
+  border-radius: 15px;
+  padding: 1.25rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.new-skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #f7c46c;
+}
+
+/* Skills Section Styles */
+.skills-wrapper {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-4 w-full px-4 sm:px-6;
+}
+
+.skill-card {
+  @apply relative p-5 rounded-xl transition-all duration-300;
+  background: linear-gradient(145deg, rgba(43, 43, 43, 0.9), rgba(33, 33, 33, 0.9));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill-card:hover {
+  @apply transform -translate-y-1 border-pink-500/30;
+  box-shadow: 0 4px 20px -2px rgba(236, 72, 153, 0.15);
+}
+
+.skill-items {
+  @apply flex flex-wrap gap-2 mt-4;
+}
+
+.skill-tag {
+  @apply px-3 py-1 text-sm text-white/90 rounded-md transition-all duration-200
+         bg-gradient-to-r from-pink-500/10 to-purple-500/10 
+         border border-white/5 hover:border-pink-500/30;
+}
+
+/* Remove any previous skills grid styles */
+.mobile-skills-wrapper,
+.skills-grid,
+.skills-grid-container,
+.grid-skills-fix {
+  display: none !important;
+}
+
+/* Remove side padding from skill section on all screens */
+.skill {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100%;
+  overflow: visible !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal scroll on mobile */
+body, html {
+  overflow-x: hidden !important;
 }
