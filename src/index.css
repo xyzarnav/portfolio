@@ -351,3 +351,41 @@
 body, html {
   overflow-x: hidden !important;
 }
+
+/* Add extra bottom padding for mobile ONLY to main content area */
+@media (max-width: 767px) {
+  .main-content {
+    padding-bottom: 6rem !important; /* adjust as needed for your layout */
+  }
+}
+
+/* Fix for mobile bottom visibility issues */
+@media (max-width: 767px) {
+  /* Target the last card in each section */
+  .card:last-child, 
+  section > div:last-child,
+  .timeline:last-child,
+  article > div:last-child {
+    margin-bottom: 0rem !important;
+  }
+  
+  /* Add extra bottom padding to bottom sections */
+  section:last-of-type,
+  .content-section:last-of-type,
+  article.card {
+    margin-bottom: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  
+  /* Ensure "What I'm Doing" section cards are fully visible */
+  .services-container .card,
+  .skills-card,
+  .service-card {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Add comprehensive bottom spacing for any last item */
+  *:last-child .card:last-child {
+    margin-bottom: 2rem !important;
+  }
+}

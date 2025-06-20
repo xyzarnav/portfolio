@@ -35,7 +35,7 @@ const services = [
 function About({ isMobile }) {
   return (
     <div className={`about-container ${isMobile ? "scrollable-content" : ""}`}>
-      <article className="card bg-smoky-black border border-white/10 rounded-[20px] p-[15px] sm:p-[20px] w-full sm:w-[90%] md:w-[520px] md:mx-auto md:p-[30px] xl:w-auto xl:min-h-full">
+      <article className="card bg-smoky-black border border-white/10 rounded-[20px] p-[15px] sm:p-[20px] w-full sm:w-[90%] md:w-[520px] md:mx-auto md:p-[30px] xl:w-auto xl:min-h-full mb-0">
         <header className="mb-5 sm:mb-8 flex flex-col items-center text-center">
           <h2 className="section-title text-white inline-block text-[26px] sm:text-[36px] font-bold mb-2 flex items-center gap-2 after:content-none">
             ABOUT{" "}
@@ -54,7 +54,7 @@ function About({ isMobile }) {
           </h2>
         </header>
 
-        <section className="about-text mb-6 sm:mb-8">
+        <section className="about-text mb-3 sm:mb-2">
           <p className="text-white text-[14px] sm:text-[18px] font-fw-300 leading-[1.8]">
             I'm an{" "}
             <span className="text-neon-blue font-fw-600">
@@ -103,7 +103,7 @@ function About({ isMobile }) {
           </p>
         </section>
 
-        <section className="service mb-6 sm:mb-8">
+        <section className="service mb-4 sm:mb-6">
           <h3 className="text-white text-[20px] sm:text-[22px] capitalize mb-4 sm:mb-6 border-b border-jet/50 pb-2 flex items-center gap-2">
             <ion-icon
               name="construct-outline"
@@ -153,10 +153,10 @@ function About({ isMobile }) {
         </section>
 
         {/* Call to action section */}
-        <section className="mb-4 sm:mb-6">
-          <div className="card p-4 sm:p-6 border border-jet/40 bg-gradient-to-br from-eerie-black-2/50 to-eerie-black-1/50 backdrop-blur-sm">
-            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-              <h3 className="text-white-2 text-[18px] sm:text-[20px] font-fw-500">
+        <section className="mb-0 pb-0">
+          <div className="card p-2 sm:p-3 border border-jet/40 bg-gradient-to-br from-eerie-black-2/50 to-eerie-black-1/50 backdrop-blur-sm">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1 mb-1 sm:mb-2">
+              <h3 className="text-white-2 text-[16px] sm:text-[18px] font-fw-500">
                 Ready to work together?
               </h3>
               <ion-icon
@@ -164,13 +164,13 @@ function About({ isMobile }) {
                 class="text-orange-yellow-crayola text-xl hidden sm:block"
               ></ion-icon>
             </div>
-            <p className="text-white text-[13px] sm:text-[15px] mb-3 sm:mb-4">
+            <p className="text-white text-[12px] sm:text-[14px] mb-2 leading-tight">
               Feel free to reach out if you're looking for a developer, have a
               question, or just want to connect.
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-yellow-crayola to-vegas-gold text-eerie-black-1 font-fw-500 py-1.5 sm:py-2 px-3 sm:px-4 text-[13px] sm:text-[15px] rounded-md hover:shadow-glow transition-all duration-300"
+              className="inline-flex items-center gap-1 bg-gradient-to-r from-orange-yellow-crayola to-vegas-gold text-eerie-black-1 font-fw-500 py-0.5 px-2 sm:px-3 text-[12px] sm:text-[14px] rounded-md hover:shadow-glow transition-all duration-300"
             >
               Contact me
               <ion-icon name="arrow-forward-outline"></ion-icon>
