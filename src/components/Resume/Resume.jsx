@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-
+import resumePDF from "../../assets/arnavResume90.pdf";
 const education = [
   {
     title: "Vivekanand Education Society's Institute Of Technology (VESIT)",
@@ -339,7 +339,8 @@ const Resume = () => {
       {/* Download Resume Button */}
       <div className="flex justify-center mt-1 sm:mt-8 mb-0 w-full">
         <a
-          href="https://github.com/xyzarnav"
+          href={resumePDF}
+          download="Arnav_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative inline-flex items-center justify-center w-full sm:max-w-xs overflow-hidden rounded-lg bg-gradient-to-r from-orange-yellow-crayola to-vegas-gold p-[2px] text-eerie-black-1 shadow-glow hover:shadow-lg hover:shadow-orange-yellow-crayola/30 focus:outline-none transform transition-transform hover:scale-105 active:scale-95"
