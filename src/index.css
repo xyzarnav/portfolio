@@ -366,7 +366,7 @@ body, html {
   section > div:last-child,
   .timeline:last-child,
   article > div:last-child {
-    margin-bottom: 0rem !important;
+    margin-bottom: 8rem !important;
   }
   
   /* Add extra bottom padding to bottom sections */
@@ -376,16 +376,23 @@ body, html {
     margin-bottom: 4rem !important;
     padding-bottom: 4rem !important;
   }
-  
+  .experience-section.timeline:last-child,
+  .experience-section.timeline {
+    margin-bottom: 1rem !important;
+    padding-bottom: 0 !important;
+  }
   /* Ensure "What I'm Doing" section cards are fully visible */
   .services-container .card,
   .skills-card,
   .service-card {
     margin-bottom: 1.5rem !important;
   }
-  
+  .timeline:last-child + div.flex {
+    margin-top: -20rem !important; 
+  }
   /* Add comprehensive bottom spacing for any last item */
   *:last-child .card:last-child {
-    margin-bottom: 2rem !important;
+    margin-bottom: 1rem !important;
   }
+
 }
