@@ -52,18 +52,15 @@ const projects = [
 ];
 const Portfolio = (props) => {
 	const latestProjectRef = useRef(null);
-	const videoRef = useRef(null); // Add this line
+	const videoRef = useRef(null);
 
-	// Add this new useEffect for auto-play
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			if (videoRef.current) {
-				videoRef.current
-					.play()
-					.then(() => console.log("Auto-play started"))
-					.catch((err) => console.log("Auto-play prevented:", err));
+				// Send play command to Cloudinary player
+				videoRef.current.contentWindow.postMessage('play', '*');
 			}
-		}, 2000); // 2 seconds delay
+		}, 2000);
 
 		return () => clearTimeout(timer);
 	}, []);
@@ -129,34 +126,16 @@ const Portfolio = (props) => {
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-10" />
               {index === 0 ? (
                 <div className="w-full h-full relative z-20">
-                  <video
-                    ref={(el) => {
-                      videoRef.current = el; // Add this line
-                      if (el) {
-                        el.addEventListener("canplay", () => {
-                          console.log("Video can play");
-                          // Ensure video is interactive after loading
-                          el.setAttribute("controls", "controls");
-                        });
-                        el.addEventListener("play", () =>
-                          console.log("Video playing")
-                        );
-                        el.addEventListener("pause", () =>
-                          console.log("Video paused")
-                        );
-                      }
-                    }}
+                  <iframe
+                    ref={videoRef}
                     className="w-full h-full object-cover"
-                    controls
-                    preload="auto"
-                    poster={project.image}
-                    playsInline
-                    muted={true} // Changed to true to allow auto-play
+                    src="https://player.cloudinary.com/embed/?cloud_name=dnyrdbyes&public_id=el2hpdqxszy4fuqe9zyk&profile=cld-default&player[autoplay]=true&player[muted]=true"
+                    allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                    frameBorder="0"
+                    title="TrustChain Demo"
                     style={{ position: "relative", zIndex: 30 }}
-                  >
-                    <source src={trustChainVideo} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                  ></iframe>
                 </div>
               ) : (
                 <img
