@@ -176,7 +176,7 @@ const Sidebar = () => {
           </li>
           <li>
             <a
-              href="https://twitter.com/your_twitter_handle"
+              href="https://x.com/ARNAV_xyzxyz"
               className="text-[#1da1f2] text-[22px] sm:text-[24px] hover:text-[#fbbc05] transition-colors"
               aria-label="Twitter"
               target="_blank" rel="noopener noreferrer"

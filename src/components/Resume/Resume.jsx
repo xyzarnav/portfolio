@@ -106,7 +106,7 @@ const Resume = () => {
       </header>
 
       {/* Skills Section */}
-      <section className="mt-2 sm:mt-6" ref={skillsRef}>
+      <section className="mt-0 pt-0 sm:mt-6 skills-section" ref={skillsRef}>
         <div className="flex items-center mb-4 sm:mb-6">
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000"></div>

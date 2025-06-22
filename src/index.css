@@ -378,8 +378,19 @@ body, html {
   }
   .experience-section.timeline:last-child,
   .experience-section.timeline {
-    margin-bottom: 1rem !important;
+    margin-bottom: 2rem !important;
     padding-bottom: 0 !important;
+  }
+
+  .skills-section {
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  section.skills-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
   /* Ensure "What I'm Doing" section cards are fully visible */
   .services-container .card,
@@ -395,4 +406,20 @@ body, html {
     margin-bottom: 1rem !important;
   }
 
+  /* More specific selector for skills section */
+  article.card > section.skills-section {
+    margin-top: -1rem !important;
+    padding-top: 0 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Target the header + skills section margin */
+  article.card > header + section.skills-section {
+    margin-top: -2rem !important;
+  }
+  
+  /* Make margin-bottom extremely specific */
+  .skills-section.skills-section.skills-section {
+    margin-bottom: 0 !important;
+  }
 }
