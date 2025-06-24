@@ -24,7 +24,7 @@ const Navbar = ({ activePage, setActivePage }) => {
 	};
 
 	return (
-		<nav className="w-full bg-[rgba(30,30,36,0.9)] backdrop-blur-lg border border-jet rounded-lg shadow-shadow-2 z-50 mb-4 sm:mb-6 mx-auto">
+		<nav className="w-full bg-[rgba(30,30,36,0.9)] backdrop-blur-lg border border-jet rounded-lg shadow-shadow-2 z-50 mb-4 sm:mb-0 mx-auto">
 			<ul className="flex w-full justify-between items-center px-0 sm:px-4 gap-0 sm:gap-2">
 				{navItems.map((item) => (
 					<li

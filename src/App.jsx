@@ -128,7 +128,7 @@ function App() {
                 />
               </div>
             ) : (
-              <div className="mt-16 overflow-y-auto scrollbar-none">
+              <div className="mt-6 overflow-y-auto scrollbar-none pt-2 ">
                 <Routes>
                   <Route path="/" element={<Navigate to="/about" replace />} />
                   <Route
